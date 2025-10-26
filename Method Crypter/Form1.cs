@@ -310,6 +310,7 @@ namespace Method_Crypter
             jss.jsonTextBoxAESKey = textBoxAESKey.Text;
             jss.jsonTextBoxAESIV = textBoxAESIV.Text;
             jss.jsonTextBoxPathToServer = textBoxPathToServer.Text;
+            jss.jsonTextBoxPathToOutputEXE = textBoxPathToOutputEXE.Text;
             jss.jsonTextBoxPayloadStringsType = textBoxPayloadStringsType.Text;
             jss.jsonTextBoxPayloadStringsArrayName = textBoxPayloadStringsArrayName.Text;
             jss.jsonTextBoxForceReJITName = textBoxForceReJITName.Text;
@@ -374,6 +375,7 @@ namespace Method_Crypter
                     textBoxAESKey.Text = jss.jsonTextBoxAESKey;
                     textBoxAESIV.Text = jss.jsonTextBoxAESIV;
                     textBoxPathToServer.Text = jss.jsonTextBoxPathToServer;
+                    textBoxPathToOutputEXE.Text = jss.jsonTextBoxPathToOutputEXE;
                     textBoxPayloadStringsType.Text = jss.jsonTextBoxPayloadStringsType;
                     textBoxPayloadStringsArrayName.Text = jss.jsonTextBoxPayloadStringsArrayName;
                     textBoxForceReJITName.Text = jss.jsonTextBoxForceReJITName;
@@ -415,6 +417,7 @@ namespace Method_Crypter
             public string jsonTextBoxAESKey { get; set; }
             public string jsonTextBoxAESIV { get; set; }
             public string jsonTextBoxPathToServer { get; set; }
+            public string jsonTextBoxPathToOutputEXE { get; set; }
             public string jsonTextBoxPayloadStringsType { get; set; }
             public string jsonTextBoxPayloadStringsArrayName { get; set; }
             public string jsonTextBoxForceReJITName { get; set; }

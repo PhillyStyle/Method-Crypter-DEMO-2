@@ -77,12 +77,12 @@
             this.textBoxPayloadStringsType = new System.Windows.Forms.TextBox();
             this.textBoxPayloadStringsArrayName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBoxForceReJITName = new System.Windows.Forms.TextBox();
-            this.textBoxForceReJITCalledType = new System.Windows.Forms.TextBox();
             this.textBoxForceReJITCalledMethod = new System.Windows.Forms.TextBox();
+            this.textBoxForceReJITCalledType = new System.Windows.Forms.TextBox();
+            this.textBoxForceReJITName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -456,7 +456,7 @@
             this.textBoxPathToOutputEXE.Name = "textBoxPathToOutputEXE";
             this.textBoxPathToOutputEXE.Size = new System.Drawing.Size(293, 20);
             this.textBoxPathToOutputEXE.TabIndex = 33;
-            this.textBoxPathToOutputEXE.Text = ".\\Crypted.exe";
+            this.textBoxPathToOutputEXE.Text = ".\\Output.exe";
             // 
             // label11
             // 
@@ -514,23 +514,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Force Re-JIT";
             // 
-            // label14
+            // textBoxForceReJITCalledMethod
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(35, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Method Name:";
+            this.textBoxForceReJITCalledMethod.Location = new System.Drawing.Point(111, 82);
+            this.textBoxForceReJITCalledMethod.Name = "textBoxForceReJITCalledMethod";
+            this.textBoxForceReJITCalledMethod.Size = new System.Drawing.Size(304, 20);
+            this.textBoxForceReJITCalledMethod.TabIndex = 5;
             // 
-            // label15
+            // textBoxForceReJITCalledType
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(92, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Called From Type:";
+            this.textBoxForceReJITCalledType.Location = new System.Drawing.Point(111, 52);
+            this.textBoxForceReJITCalledType.Name = "textBoxForceReJITCalledType";
+            this.textBoxForceReJITCalledType.Size = new System.Drawing.Size(304, 20);
+            this.textBoxForceReJITCalledType.TabIndex = 4;
+            // 
+            // textBoxForceReJITName
+            // 
+            this.textBoxForceReJITName.Location = new System.Drawing.Point(111, 20);
+            this.textBoxForceReJITName.Name = "textBoxForceReJITName";
+            this.textBoxForceReJITName.Size = new System.Drawing.Size(304, 20);
+            this.textBoxForceReJITName.TabIndex = 3;
             // 
             // label16
             // 
@@ -541,26 +544,23 @@
             this.label16.TabIndex = 2;
             this.label16.Text = "Called From Method:";
             // 
-            // textBoxForceReJITName
+            // label15
             // 
-            this.textBoxForceReJITName.Location = new System.Drawing.Point(111, 20);
-            this.textBoxForceReJITName.Name = "textBoxForceReJITName";
-            this.textBoxForceReJITName.Size = new System.Drawing.Size(304, 20);
-            this.textBoxForceReJITName.TabIndex = 3;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(20, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Called From Type:";
             // 
-            // textBoxForceReJITCalledType
+            // label14
             // 
-            this.textBoxForceReJITCalledType.Location = new System.Drawing.Point(111, 52);
-            this.textBoxForceReJITCalledType.Name = "textBoxForceReJITCalledType";
-            this.textBoxForceReJITCalledType.Size = new System.Drawing.Size(304, 20);
-            this.textBoxForceReJITCalledType.TabIndex = 4;
-            // 
-            // textBoxForceReJITCalledMethod
-            // 
-            this.textBoxForceReJITCalledMethod.Location = new System.Drawing.Point(111, 82);
-            this.textBoxForceReJITCalledMethod.Name = "textBoxForceReJITCalledMethod";
-            this.textBoxForceReJITCalledMethod.Size = new System.Drawing.Size(304, 20);
-            this.textBoxForceReJITCalledMethod.TabIndex = 5;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(35, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Method Name:";
             // 
             // Form1
             // 
