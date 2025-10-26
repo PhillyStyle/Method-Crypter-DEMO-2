@@ -17,10 +17,10 @@ Method Crypter Demo 2 is still a suite of 3 programs:
 
 ## What is New in 2.0?
 * Smaller File size:
-  * In version 2.0 the file size of Crypted.exe is dramatically reduced. From about 450 KB to just 23-26 KB.  This is done by not including dnlib in the Crypted.exe anymore.
+  * In version 2.0 the file size of Output.exe is dramatically reduced. From about 450 KB to just 23-26 KB.  This is done by not including dnlib in the Crypted.exe anymore.
 * New payload injection method:
   * In version 2.0 we no longer use junk methods for our encryption overhead.  We don't encrypt to the method space anymore at all.  Instead we encrypt to base64 encoded strings and inject them into the file, then we replace the code in the methods we encrypted with stack neutral junk code.  Using a binary patching method that I created.
-  * Crypted.exe no longer has to copy it's self to the temp directory to open it's self with dnlib because we don't use dnlib in Crypted.exe anymore.  We just use memory offsets now.
+  * Output.exe no longer has to copy it's self to the temp directory to open it's self with dnlib because we don't use dnlib in Output.exe anymore.  We just use memory offsets now.
   * Now that there is real code in our methods, the JIT compiler gets ahead of us compiling code we don't want compiled yet, so I had to add the Force Re-JIT section to the dialog.
     * ForceReJit is the name of a method we use in Crypted Demo.exe, and all it does is force the Just In Time compiler to recompile code when we want it to.
     * ForceReJit would break if Randomize Method Names was checked, so I had to fix that.
@@ -34,7 +34,7 @@ Method Crypter Demo 2 is still a suite of 3 programs:
   * Pick the paths to the Crypted Demo.exe, Server.exe, and Output EXE.
   * If you are going to encrypt strings then you must define the Type and Array Name for your encrypted strings as defined in Crypted Demo.exe.
   * Choose options like Randomizing Method Names (recommended), Injecting junk code at the start of encrypted methods (To obfuscate method size), Randomizing the Assembly GUID (How often do we forget to do this as developers?), and Show the Method Inspector (A cool little Form that shows you insights about what methods are in your file, their names, and where, and how big, and stuff like that.)
-  * ***Now it is time for the secret sauce.***  This has changed since Method Crypter Demo 1.  Now Method Crypter encrypts methods to base64 strings located in the Payload Strings Array.  It then replaces the code in the methods that you encrypted with stack neutral junk code. (leaving behind just a touch of the code that was there before for legitimacy but not enough to leave a signature.).  At runtime, our crypted output exe (Crypted.exe) connects to the Server.exe, and Server.exe tells Crypted.exe how to decrypt the encrypted methods.  Crypted.exe then runs the payload (Console Snake in this case).
+  * ***Now it is time for the secret sauce.***  This has changed since Method Crypter Demo 1.  Now Method Crypter encrypts methods to base64 strings located in the Payload Strings Array.  It then replaces the code in the methods that you encrypted with stack neutral junk code. (leaving behind just a touch of the code that was there before for legitimacy but not enough to leave a signature.).  At runtime, our crypted output exe (Output.exe) connects to the Server.exe, and Server.exe tells Output.exe how to decrypt the encrypted methods.  Output.exe then runs the payload (Console Snake in this case).
  
 * **Crypted Demo.exe** is the program with the payload. (The part that gets encrypted.)  In this case the payload is a Console Snake game, (It's pretty fun if I must say so myself.) but the payload can be whatever you want it to be.  Use your imagination.  How does crypted demo do it?
   * In this case, when you type "run" into the console, crypted demo connects to the Server.exe.  Server.exe then sends The AES Key/IV and tells Crypted Demo what methods to decrypt.  I will get into "Why use Server.exe at all" later.  Crypted demo then finds the methods in memory (based off offsets that Server.exe gives it), and decrypts the payload strings to them at runtime.  Then it executes the payload (The Snake Game).
